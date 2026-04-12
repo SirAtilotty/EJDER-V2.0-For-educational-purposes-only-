@@ -33,7 +33,7 @@ Ensure USB CDC On Boot is set to Enabled in the Tools menu.
 Flash the EJDERV2.0_eng.ino file to your board.
 
 📖 How to Use
-Connect to the WiFi network: "EJDERt".
+Connect to the WiFi network: "EJDER".
 
 Password: "EJDERYA32".
 
