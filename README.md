@@ -1,12 +1,6 @@
 # EJDER-V2.0-For-educational-purposes-only-
 
-![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
-
-![Language: C++](https://img.shields.io/badge/Language-C%2B%2B-blue?logo=c%2B%2B&logoColor=white)
-
-![IDE: Arduino](https://img.shields.io/badge/IDE-Arduino-00979D?logo=arduino&logoColor=white)
-
-![Platform: ESP32-S2](https://img.shields.io/badge/Platform-ESP32--S2-df2a2a?logo=espressif&logoColor=white)
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg) ![Language: C++](https://img.shields.io/badge/Language-C%2B%2B-blue?logo=c%2B%2B&logoColor=white) ![IDE: Arduino](https://img.shields.io/badge/IDE-Arduino-00979D?logo=arduino&logoColor=white) ![Platform: ESP32-S2](https://img.shields.io/badge/Platform-ESP32--S2-df2a2a?logo=espressif&logoColor=white)
 
 EJDER - ESP32-S2 WiFi Pentest Tool 🐉
 EJDER is a portable WiFi security auditing tool developed specifically for the ESP32-S2 . It is designed to demonstrate 802.11 layer vulnerabilities and test network resilience through various frame injection techniques.
